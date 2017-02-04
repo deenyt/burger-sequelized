@@ -1,0 +1,93 @@
+<div class="row">
+  <hr> <hr>
+  <div class="text-center">
+            <img src="assets/img/burger.jpeg" alt="pretty burger" height="100">
+  </div>
+</div>
+
+<div class="row">
+  <div class="text-center">
+        <h1>Burger Munch</h1>
+        <hr>
+  </div>
+</div>
+
+
+<div class="row">
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      
+        <h4>Ready to Devour</h4>
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"> 
+      
+      </div>
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"> 
+      
+        <h4>Devoured</h4>
+      </div>
+      <hr>
+      <hr>
+</div>
+
+
+
+<div class="row">
+    <section class=col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <ol class="list-group">
+            {{!-- Cycles through each burger... --}}
+            {{#each burgers}}
+                {{!-- ...unless it has been devoured list out all cases --}}
+                {{#unless this.devoured}}
+                    <li class="list-group-item">
+                        {{!-- Display burger name --}}
+                        <div class="same-line">
+                        {{this.burger_name}}
+                        </div>
+                        <div class="same-line">
+                       <button type="submit" form="{{this.id}}" class="btn btn-block">Devour</button>
+                  
+
+
+
+
+
+
+                        </div>
+                    </li>
+                    {{!-- this.id renders the given burger's ID --}}
+                    <form action="/{{this.id}}?_method=PUT" method="POST" id="{{this.id}}" class="hidden-xs-up"></form>
+                {{/unless}}
+            {{/each}}
+        </ol>
+    </section>
+    
+    <section class=col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <ol class="list-group">
+            {{!-- Cycles through each burger... --}}
+            {{#each burgers}}
+                {{!-- ...and lists out all cases that have been devoured --}}
+                {{#if this.devoured}}
+                    {{!-- Display burger name --}}
+                    <li class="list-group-item">{{this.burger_name}}</li>
+                {{/if}}
+            {{/each}}
+        </ol>
+    </section>
+</div>
+<div>
+   <div class="row">
+     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+     </div>
+     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      
+         <h2>Add Burger</h2>
+         <form method="POST" action="/" class="form">
+            <div class="form-group">
+                <input type="text" name="burger" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn  btn-block">Submit Burger</button>
+        </form>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+  </div>
+</div>

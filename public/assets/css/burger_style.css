@@ -1,0 +1,26 @@
+
+img {
+	background-color: #FFFFE0;
+}
+li {
+  background: #FAEBD7;
+  margin: 5px;
+  padding: 5px;
+.label {
+}
+
+  font-weight: bold;
+}
+
+.create-update-form {
+  background: #FFFFE0;
+  margin: 5px;
+  padding: 5px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+.same-line {
+  display: inline-block;
+}
